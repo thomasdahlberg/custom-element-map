@@ -1,0 +1,19 @@
+{
+  "name": "custom-element-map",
+  "version": "1.0.0",
+  "description": "A utility for the CustomElementsRegistry that exposes a map of all registered elements",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "custom-element",
+    "registry",
+    "web-component"
+  ],
+  "author": "Thomas Dahlberg",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
