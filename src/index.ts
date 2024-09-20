@@ -1,8 +1,8 @@
-(customElements as any)['map'] = new Map<string, CustomElementConstructor>();
+(window as any)['__CustomElementsMap'] = new Map<string, CustomElementConstructor>();
 
 const originalDefineFn = customElements.define;
 
-customElements.define = (name: string, constructor: CustomElementConstructor, options: ElementDefinitionOptions) => {
-  originalDefineFn(name, constructor, options);
-  (customElements as any)['map'].set(name, constructor);
+customElements.define = function(name: string, constructor: CustomElementConstructor, options: ElementDefinitionOptions) {
+  originalDefineFn.apply(customElements, [name, constructor, options]);
+  (window as any)['__CustomElementsMap'].set(name, constructor);
 }
